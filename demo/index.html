@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+  </head>
+  <body ng-app="ngGiphyApp">
+
+    <!-- Add your site or application content here -->
+    <div class="container" ng-view="">
+      
+      <ng-giphy-search query="lol" limit="5"></ng-giphy-search>
+
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script>
+
+    <script src="./app.js"></script>
+    <script src="../src/ng-giphy.js"></script>
+</body>
+</html>
