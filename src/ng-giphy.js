@@ -3,9 +3,24 @@
 angular.module('ngGiphy', [])
   .directive('ngGiphySearch', ['$compile', '$http', '$templateCache', function ($compile, $http, $templateCache) {
 
+    // Create the output object
+
     var output = {};
 
+
+    // Restrict the directive to Attributes and Elements
+
     output.restrict = 'AE';
+
+
+    output.scope = {
+      query : '@query',
+      limit : '@limit',
+      offset : '@offset'
+    }
+
+
+    // Retrive the template from the templateUrl parameter or use the default one.
 
     var getTemplate = function(url){
       if (angular.isUndefined(url)) {
@@ -13,20 +28,29 @@ angular.module('ngGiphy', [])
       };
 
       var templateLoader = $http.get(url, {cache: $templateCache});
-      
+
       return templateLoader;
 
     }
 
+
+    // Create the linker function
+
     var linker = function(scope, element, attrs) {
+
+
+      // Define if data has been loaded
 
       scope.dataLoaded = false;
 
+
+      // Define parameters from attributes
+
       var params = {};
       params.api_key = 'dc6zaTOxFJmzC';
-      params.q = attrs.query;
-      params.limit = attrs.limit;
-      params.offset = attrs.offset;
+      params.q = scope.query;
+      params.limit = scope.limit;
+      params.offset = scope.offset;
 
       var apiSearch = function(){
 
@@ -65,4 +89,3 @@ angular.module('ngGiphy', [])
     return output;
 
   }]);
-
