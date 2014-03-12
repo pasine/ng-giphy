@@ -11,8 +11,19 @@
 
     <!-- Add your site or application content here -->
     <div class="container" ng-view="">
-      
+
+      <h2>Default template</h2>
+      <pre>&lt;ng-giphy-search query="lol" limit="5"></ng-giphy-search></pre>
       <ng-giphy-search query="lol" limit="5"></ng-giphy-search>
+
+
+      <h2>Custom template</h2>
+      <pre>&lt;ng-giphy-search query="cats" template-url="giphy-view-custom.html"></ng-giphy-search></pre>
+      <ng-giphy-search query="cats" limit="5" template-url="giphy-view-custom.html"></ng-giphy-search>
+
+      <h2>Custom template with offset</h2>
+      <pre>&lt;ng-giphy-search query="cats" offset="5" template-url="giphy-view-custom.html"></ng-giphy-search></pre>
+      <ng-giphy-search query="cats" limit="5" offset="5" template-url="giphy-view-custom.html"></ng-giphy-search>
 
     </div>
 
