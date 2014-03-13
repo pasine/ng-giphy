@@ -48,9 +48,11 @@ angular.module('ngGiphy', [])
 
       var params = {};
       params.api_key = 'dc6zaTOxFJmzC';
-      params.q = scope.query;
+      params.q = scope.query.split(',').join('+');
       params.limit = scope.limit;
       params.offset = scope.offset;
+
+      console.log(params.q);
 
       var apiSearch = function(){
 

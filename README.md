@@ -4,6 +4,9 @@ This is a simple directive to display the result of a Giphy search.
 
 ```<ng-giphy-search query="cats"></ng-giphy-search>```
 
+You can pass multiple tags separating them with a comma
+
+```<ng-giphy-search query="funny,cats"></ng-giphy-search>```
 
 You can optionally add ```limit``` and ```offset``` parameters like this
 
