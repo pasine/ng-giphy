@@ -47,12 +47,14 @@ angular.module('ngGiphy', [])
       // Define parameters from attributes
 
       var params = {};
+
+      // TODO create a configurable api_key parameter
       params.api_key = 'dc6zaTOxFJmzC';
+
+      // Retrive parameters from directive attributes
       params.q = scope.query.split(',').join('+');
       params.limit = scope.limit;
       params.offset = scope.offset;
-
-      console.log(params.q);
 
       var apiSearch = function(){
 
